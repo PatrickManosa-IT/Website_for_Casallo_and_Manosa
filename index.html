@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1026">
+
+  <title>Love Hub — Monthsary Edition</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  
+  <!-- WELCOME PAGE — BEFORE LOGIN -->
+  <section id="welcomePage" class="welcome-page">
+
+    <div class="welcome-card">
+
+      <div class="welcome-picture">
+        <img
+          src="love-hub-bg.png"
+          alt="Our beautiful galaxy universe"
+        />
+        <div class="welcome-picture-overlay"></div>
+        <span class="welcome-picture-heart">♥</span>
+      </div>
+
+      <div class="welcome-content">
+
+        <p class="welcome-eyebrow">
+          WELCOME TO OUR LITTLE UNIVERSE
+        </p>
+
+        <h1>Login</h1>
+
+        <p class="welcome-description">
+          A little universe made just for us.
+          Enter our world and let's continue our story together.
+        </p>
+
+        <button
+          type="button"
+          id="welcomeLoginButton"
+          class="welcome-login-button"
+        >
+          Login to Our World
+          <span aria-hidden="true">♥</span>
+        </button>
+
+        <p class="welcome-footer">
+          Made with love, just for you ✦
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  
+  <!-- INTERACTIVE LAMP + LOGIN SCREEN -->
+  <section id="loginScreen" class="login-screen lamp-login hidden">
+
+    <!-- LEFT SIDE: LAMP STUDIO -->
+    <div class="lamp-side">
+
+      <div class="lamp-heading">
+        <span class="lamp-mini-heart">♥</span>
+        <p>OUR LITTLE WORLD</p>
+        <h2>A little light<br>for our love.</h2>
+        <span class="lamp-description">
+          Set the mood before entering our world.
+        </span>
+      </div>
+
+      <div class="lamp-scene" id="lampScene">
+
+        <div class="lamp-glow" id="lampGlow"></div>
+
+        <div class="lamp">
+          <div class="lamp-shade"></div>
+          <div class="lamp-bulb"></div>
+          <div class="lamp-stem"></div>
+          <div class="lamp-base"></div>
+        </div>
+
+        <div class="lamp-table"></div>
+
+        <div class="lamp-decoration decoration-left">♥</div>
+        <div class="lamp-decoration decoration-right">✦</div>
+
+      </div>
+
+      <div class="lamp-controls">
+
+        <div class="lamp-control-heading">
+          <span>Lighting Mood</span>
+          <span id="lampStatus" class="lamp-status">LIGHT ON</span>
+        </div>
+
+        <button
+          type="button"
+          id="lampToggle"
+          class="lamp-switch"
+          aria-pressed="true"
+        >
+          <span class="switch-icon">☼</span>
+          <span id="lampToggleText">Turn the light off</span>
+          <span class="switch-track">
+            <span class="switch-knob"></span>
+          </span>
+        </button>
+
+        <p class="color-label">CHOOSE YOUR COLOR</p>
+
+        <div class="lamp-colors" aria-label="Choose lamp color">
+
+          <button
+            type="button"
+            class="lamp-color active"
+            data-color="#ff75b5"
+            style="--swatch:#ff75b5"
+            aria-label="Pink light"
+            aria-pressed="true"
+          >
+            <span></span>
+            <small>Pink</small>
+          </button>
+
+          <button
+            type="button"
+            class="lamp-color"
+            data-color="#70c8ff"
+            style="--swatch:#70c8ff"
+            aria-label="Blue light"
+            aria-pressed="false"
+          >
+            <span></span>
+            <small>Blue</small>
+          </button>
+
+          <button
+            type="button"
+            class="lamp-color"
+            data-color="#b39aff"
+            style="--swatch:#b39aff"
+            aria-label="Purple light"
+            aria-pressed="false"
+          >
+            <span></span>
+            <small>Purple</small>
+          </button>
+
+          <button
+            type="button"
+            class="lamp-color"
+            data-color="#ffc76b"
+            style="--swatch:#ffc76b"
+            aria-label="Warm yellow light"
+            aria-pressed="false"
+          >
+            <span></span>
+            <small>Warm</small>
+          </button>
+
+          <button
+            type="button"
+            class="lamp-color"
+            data-color="#75e6b1"
+            style="--swatch:#75e6b1"
+            aria-label="Green light"
+            aria-pressed="false"
+          >
+            <span></span>
+            <small>Green</small>
+          </button>
+
+        </div>
+
+      </div>
+
+      <p class="lamp-footer">Made with love, just for you ♥</p>
+
+    </div>
+
+    <!-- RIGHT SIDE: LOGIN -->
+    <div class="login-side">
+
+      <div class="login-card">
+
+        <div class="login-heart">♥</div>
+
+        <p class="login-eyebrow">A PRIVATE LITTLE SPACE</p>
+
+        <h1>Welcome Home</h1>
+
+        <p class="login-subtitle">
+          Your favorite place is just one login away.
+        </p>
+
+        
+        <form id="loginForm">
+          <label for="username">Username</label>
+
+          <div class="login-input-wrap">
+            <span aria-hidden="true">♡</span>
+            <input
+              type="text"
+              id="username"
+              placeholder="Enter your username"
+              autocomplete="username"
+              required
+            >
+          </div>
+
+          <label for="password">Password</label>
+
+          <div class="login-input-wrap password-input-wrap">
+            <span class="password-icon" aria-hidden="true">♡</span>
+
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+            >
+
+            <button
+              type="button"
+              id="togglePassword"
+              class="password-toggle"
+              aria-label="Show password"
+              aria-pressed="false"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+
+          <button type="submit" class="primary-button login-submit">
+            Enter Our World <span aria-hidden="true">♥</span>
+          </button>
+
+          <p
+            id="loginMessage"
+            class="login-message"
+            aria-live="polite"
+          ></p>
+        </form>
+
+
+        <div class="login-divider">
+          <span></span>
+          <small>A LITTLE WORLD FOR TWO</small>
+          <span></span>
+        </div>
+
+        <p class="login-bottom">
+          Every love story has a place to call home.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- HEART INTRO -->
+  <section id="introScreen" class="intro-screen hidden">
+    <canvas id="heartCanvas"></canvas>
+
+    <div class="intro-content">
+      <p>Every love story has a favorite chapter...</p>
+      <h1>Ours Is My Favorite</h1>
+      <button id="enterDashboard" class="primary-button">
+        Open Our World ♥
+      </button>
+    </div>
+  </section>
+
+  <!-- MAIN DASHBOARD -->
+  <main id="dashboard" class="dashboard hidden">
+
+    
+  <!-- LOVE HUB SIDEBAR NAVIGATION -->
+  <header class="site-header galaxy-sidebar">
+
+    <a href="#home" class="brand sidebar-brand" aria-label="Love Hub Home" title="Love Hub">
+      <span>♥</span>
+    </a>
+
+    <nav id="mainNav" aria-label="Main navigation">
+
+      <a href="#home" class="sidebar-link active" data-label="Home" aria-label="Home" title="Home">
+        <span class="sidebar-icon" aria-hidden="true">⌂</span>
+        <span class="sidebar-tooltip">Home</span>
+      </a>
+
+      <a href="#monthsary" class="sidebar-link" data-label="Monthsary" aria-label="Monthsary" title="Monthsary">
+        <span class="sidebar-icon" aria-hidden="true">◷</span>
+        <span class="sidebar-tooltip">Monthsary</span>
+      </a>
+
+      <a href="#letter" class="sidebar-link" data-label="Love Letter" aria-label="Love Letter" title="Love Letter">
+        <span class="sidebar-icon" aria-hidden="true">♡</span>
+        <span class="sidebar-tooltip">Love Letter</span>
+      </a>
+
+      <a href="#reasons" class="sidebar-link" data-label="Reasons" aria-label="Reasons" title="Reasons">
+        <span class="sidebar-icon" aria-hidden="true">✧</span>
+        <span class="sidebar-tooltip">Reasons</span>
+      </a>
+
+      <a href="#memories" class="sidebar-link" data-label="Memories" aria-label="Memories" title="Memories">
+        <span class="sidebar-icon" aria-hidden="true">▧</span>
+        <span class="sidebar-tooltip">Memories</span>
+      </a>
+
+      <a href="#surprise" class="sidebar-link" data-label="Surprise" aria-label="Surprise" title="Surprise">
+        <span class="sidebar-icon" aria-hidden="true">✦</span>
+        <span class="sidebar-tooltip">Surprise</span>
+      </a>
+
+      <a href="#song" class="sidebar-link" data-label="Our Song" aria-label="Our Song" title="Our Song">
+        <span class="sidebar-icon" aria-hidden="true">♫</span>
+        <span class="sidebar-tooltip">Our Song</span>
+      </a>
+
+      <a href="#quiz" class="sidebar-link" data-label="Love Quiz" aria-label="Love Quiz" title="Love Quiz">
+        <span class="sidebar-icon" aria-hidden="true">♡?</span>
+        <span class="sidebar-tooltip">Love Quiz</span>
+      </a>
+
+      <a href="#daily" class="sidebar-link" data-label="Daily Love Note" aria-label="Daily Love Note" title="Daily Love Note">
+        <span class="sidebar-icon" aria-hidden="true">✉</span>
+        <span class="sidebar-tooltip">Daily Love Note</span>
+      </a>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+      <button
+        id="menuToggle"
+        class="menu-toggle sidebar-menu-button"
+        type="button"
+        aria-label="Toggle navigation labels"
+        aria-expanded="false"
+        title="Toggle navigation labels"
+      >
+        <span aria-hidden="true">☰</span>
+      </button>
+    </div>
+
+  </header>
+
+
+    
+  <!-- CINEMATIC GALAXY HOME -->
+  <section id="home" class="hero section-card galaxy-hero">
+
+    <div class="hero-orb hero-orb-blue"></div>
+    <div class="hero-orb hero-orb-pink"></div>
+
+    <div class="hero-content">
+      <span class="hero-badge">
+        <span class="hero-status-dot"></span>
+        OUR LITTLE UNIVERSE
+      </span>
+
+      <p class="hero-kicker">ONE STORY. TWO HEARTS.</p>
+
+      <h1>
+        To My Favorite
+        <span class="hero-title-highlight">Person ♥</span>
+      </h1>
+
+      <p class="hero-description">
+        In this endless universe, I'm grateful that our paths crossed.
+        Here's a little space for our memories, our promises,
+        and every beautiful chapter still waiting for us.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#monthsary" class="primary-button link-button">
+          <span>Our Monthsary</span>
+          <span aria-hidden="true">✦</span>
+        </a>
+
+        <a href="#memories" class="hero-secondary-button">
+          Explore Our Memories <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <div class="hero-divider"></div>
+
+      <div class="hero-meta">
+        <span>♥ Together since March 25, 2026</span>
+        <span class="hero-meta-star">✧ Made for two</span>
+      </div>
+    </div>
+
+    <div class="hero-decoration" aria-hidden="true">
+      <div class="hero-planet-ring"></div>
+      <div class="hero-planet"></div>
+      <span class="hero-floating-star star-one">✦</span>
+      <span class="hero-floating-star star-two">✧</span>
+      <span class="hero-floating-star star-three">✦</span>
+      <span class="hero-floating-heart">♥</span>
+    </div>
+
+</section>
+
+
+    <!-- MONTHSARY COUNTDOWN -->
+    <section id="monthsary" class="section-card monthsary-section">
+      <p class="eyebrow">ANOTHER MONTH WITH YOU</p>
+      <h2>Our Monthsary Countdown ♥</h2>
+
+      <p id="lhCountdownTarget" class="countdown-target">
+        Counting down to our next monthsary...
+      </p>
+
+      <div id="liveMonthsaryCountdown" class="monthsary-countdown">
+        <div class="countdown-box">
+          <span id="lhDays">00</span>
+          <small>Days</small>
+        </div>
+
+        <div class="countdown-box">
+          <span id="lhHours">00</span>
+          <small>Hours</small>
+        </div>
+
+        <div class="countdown-box">
+          <span id="lhMinutes">00</span>
+          <small>Minutes</small>
+        </div>
+
+        <div class="countdown-box">
+          <span id="lhSeconds">00</span>
+          <small>Seconds</small>
+        </div>
+      </div>
+
+      <p id="lhCountdownMessage" class="countdown-message">
+        Every month with you is another beautiful chapter.
+      </p>
+
+      <button id="lhSoundToggle" class="secondary-button" type="button">
+        🔊 Toggle Sound
+      </button>
+    </section>
+
+    <!-- LOVE LETTER -->
+    <section id="letter" class="section-card">
+      <p class="eyebrow">FROM MY HEART</p>
+      <h2>A Letter for You 💌</h2>
+
+      <div class="letter-content">
+        <p>My favorite person,</p>
+
+        <p>
+          Thank you for being part of my life and for making ordinary
+          moments feel special. I hope we continue to learn, grow, and
+          choose each other through every season.
+        </p>
+
+        <p>
+          This little website is a reminder that our story matters to me.
+          Here's to more memories, more laughter, and more months together.
+        </p>
+
+        <p>With love, always. ♥</p>
+      </div>
+    </section>
+
+    <!-- REASONS -->
+    <section id="reasons" class="section-card">
+      <p class="eyebrow">A FEW LITTLE THINGS</p>
+      <h2>Reasons I Appreciate You 💗</h2>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <span>🌷</span>
+          <h3>Your Kindness</h3>
+          <p>The little ways you care make a difference.</p>
+        </article>
+
+        <article class="feature-card">
+          <span>✨</span>
+          <h3>Your Presence</h3>
+          <p>You make ordinary moments worth remembering.</p>
+        </article>
+
+        <article class="feature-card">
+          <span>💖</span>
+          <h3>Our Journey</h3>
+          <p>I appreciate every step we take together.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- MEMORIES -->
+    <section id="memories" class="section-card">
+      <p class="eyebrow">LITTLE MOMENTS, BIG MEANING</p>
+      <h2>Our Memory Corner 📸</h2>
+
+      <p>
+        Add your favorite photos to remember the moments that mean the
+        most to both of you.
+      </p>
+
+      <div class="memory-grid">
+        <div class="memory-placeholder">Our First Memory ♥</div>
+        <div class="memory-placeholder">A Happy Day ✨</div>
+        <div class="memory-placeholder">Us Together 💗</div>
+      </div>
+    </section>
+
+    <!-- SURPRISE -->
+    <section id="surprise" class="section-card">
+      <p class="eyebrow">A LITTLE SURPRISE</p>
+      <h2>Open Your Little Surprise 🎁</h2>
+
+      <p id="surpriseMessage">
+        There's something special waiting for you.
+      </p>
+
+      <button id="surpriseButton" class="primary-button" type="button">
+        Open Surprise 💝
+      </button>
+    </section>
+
+    <!-- SONG -->
+    <section id="song" class="section-card">
+      <p class="eyebrow">OUR LITTLE SOUNDTRACK</p>
+      <h2>A Song for Us 🎵</h2>
+
+      <p>You can add your chosen song file to this section.</p>
+
+      <audio id="loveSong" controls loop>
+        <source src="music/kalapastangan.mp3" type="audio/mpeg">
+        Your browser does not support audio playback.
+      </audio>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz" class="section-card">
+      <p class="eyebrow">JUST FOR FUN</p>
+      <h2>Our Little Love Quiz 💞</h2>
+
+      <p>What day did our relationship officially begin?</p>
+
+      <div class="quiz-options">
+        <button class="quiz-option" data-answer="wrong" type="button">
+          March 14, 2026
+        </button>
+
+        <button class="quiz-option" data-answer="correct" type="button">
+          March 25, 2026
+        </button>
+
+        <button class="quiz-option" data-answer="wrong" type="button">
+          April 25, 2026
+        </button>
+      </div>
+
+      <p id="quizMessage" aria-live="polite"></p>
+    </section>
+
+    <!-- DAILY MESSAGE -->
+    <section id="daily" class="section-card">
+      <p class="eyebrow">A LITTLE REMINDER</p>
+      <h2>Today's Love Note 💌</h2>
+
+      <p id="dailyMessage">
+        You are appreciated more than words can say. ♥
+      </p>
+
+      <button id="newDailyMessage" class="secondary-button" type="button">
+        Another Note ✨
+      </button>
+    </section>
+
+    <footer class="site-footer">
+      <p>Made with love, for our little world ♥</p>
+      <p>Since March 25, 2026</p>
+    </footer>
+
+  </main>
+
+  <!-- FIREWORKS CANVAS -->
+  <canvas id="fireworksCanvas" class="fireworks-canvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
